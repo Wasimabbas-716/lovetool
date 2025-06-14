@@ -1,0 +1,75 @@
+.sorrybg{
+    background:url("../../assets/sorrybg.png");
+    background-size: cover;
+    background-position: center;
+    margin:0 auto;
+    margin-top:50px;
+    margin-bottom:50px;
+  user-select: none;
+    color:white;
+    padding:30px;
+    
+}
+.lin1{
+    text-shadow: 0 0 20px #ff4e50, 0 0 30px #f9d423, 0 0 40px #ff4e50, 0 0 50px #f9d423;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    animation: animtxt 1s infinite alternate; 
+}
+
+@keyframes animtxt{
+    0% {
+        color: white; /* Red */
+    }
+    50% {
+        color: #fffb00; /* Yellow */
+    }
+    100% {
+        color: #4afcf3; /* Cyan */
+    }
+}
+
+
+
+
+#sorry-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sorry-text {
+   
+    position: absolute;
+    font-size: 2rem;
+    color: rgb(180, 180, 180);  
+    font-weight: bold;
+    animation: move-sorry 10s linear infinite;  /* Adjust speed of movement */
+    opacity: 1;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out;  /* Smooth transition */
+  }
+  
+  @keyframes move-sorry {
+    0% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    25% {
+      transform: translate(30vw, 30vh);  /* Move text diagonally */
+      opacity: 0.8;
+    }
+    50% {
+      transform: translate(-20vw, -10vh); /* Move text diagonally in other direction */
+      opacity: 0.6;
+    }
+    75% {
+      transform: translate(40vw, -20vh); /* Another random position */
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-30vw, 30vh); /* Final position */
+      opacity: 0;
+    }
+  }
+  
+  

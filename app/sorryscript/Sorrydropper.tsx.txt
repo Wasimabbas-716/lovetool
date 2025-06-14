@@ -1,0 +1,31 @@
+"use client"
+import React, { useEffect } from "react";
+import "../compnents/css/sorryscript.css";
+
+function SorryScript(props:any) {
+  useEffect(() => {
+    const container = (document.getElementById("sorry-container") as HTMLDivElement);
+    for (let i = 0; i < 10; i++) {
+      const sorryText = document.createElement("div");
+      sorryText.className = "sorry-text";
+      sorryText.innerText = "Sorry "+props.fname;
+      container.appendChild(sorryText);
+
+      // Random positioning and animation delay
+      sorryText.style.top = Math.random() * 100 + "vh";
+      sorryText.style.left = Math.random() * 100 + "vw";
+      sorryText.style.animationDelay = Math.random() * 3 + "s";
+    }
+  }, []);
+
+  return (
+    <div
+      id="sorry-container"
+      className="w-screen h-screen relative overflow-hidden"
+    >
+      {/* The  texts will be added dynamically */}
+    </div>
+  );
+}
+
+export default SorryScript;

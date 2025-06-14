@@ -1,0 +1,17 @@
+function LoveArtical(props:any){
+    return(<>
+   
+<div className="w-[400px] container mx-auto "> 
+
+  <div className=" bg-white rounded-lg shadow-md p-6 hover:shadow-lg m-[10px]">
+      <h3 className="text-xl font-semibold text-red-500 mb-2">{props.title}</h3>
+      <p className="text-gray-600">{props.desc}</p>
+      <button className="bg-pink-400 rounded-md p-[10px] mt-[20px] text-white hover:bg-pink-600 hover:shadow-3xl transition duration-100">Learn more</button>
+    </div>
+
+</div>
+
+ 
+    </>)
+}
+export default LoveArtical;

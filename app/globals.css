@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E0218A;
+  animation: 3s infinite bgChangeq linear ;
+  background: url("./assets/heart.png");
+}
+
+@keyframes bgChange {
+  0% {
+  background: linear-gradient(90deg, #FFC0CB, #FF99CC, #FF69B4);
+  }
+  20% {
+  background: linear-gradient(90deg, #FF99CC, #FF69B4, #C9C3E3);
+  }
+  40% {
+  background: linear-gradient(90deg, #FFC0CB, #FFB6C1, #FF99CC);
+  }
+  60% {
+  background: linear-gradient(90deg, #C9C3E3, #FF69B4, #FFC5C5);
+  }
+  80% {
+  background: linear-gradient(90deg, #FFB6C1, #FF99CC, #E9D8BE);
+  }
+  100% {
+  background: linear-gradient(90deg, #FFC0CB, #FF99CC, #FF69B4);
+  }
+  }
+  
+  #w_script{
+    display: block;
+  }

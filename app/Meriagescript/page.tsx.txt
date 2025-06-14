@@ -1,0 +1,15 @@
+import Header from "../compnents/Header"
+import Scripts from "../compnents/Scripts"
+import Card  from "./Card"
+function Home(){
+    return(<>
+<Header/>
+<Scripts/>
+<div className="relative w-screen h-screen m-[20px]">
+<Card/>
+</div>
+
+    
+    </>)
+}
+export default Home;

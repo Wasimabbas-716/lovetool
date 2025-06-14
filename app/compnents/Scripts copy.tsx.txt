@@ -1,0 +1,52 @@
+"use client"
+function Scripts() {
+  function hover(e: any) {
+    console.log(e);
+    (document.getElementById("w_script") as HTMLElement).style.display = e;
+  }
+  return (<>
+    {/* desctop*/}
+    <div className="block lg:block md:block sm:hidden bg-gradient-to-r from-pink-500 via-red-500 to-purple-500 text-white shadow-lg">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <nav className="">
+          <ul className="md:flex space-x-6 text-lg font-medium">
+            <li onMouseOver={() => hover("block")} onMouseOut={() => hover("none")}><a href="../wishingscript" className="hover:text-pink-100">| Wishing Script </a>
+              <ul id="w_script" style={{ display: 'none' }}>
+                <li><a href="#" className="hover:text-pink-100">| Birthday Script </a></li>
+                <li><a href="#" className="hover:text-pink-100">| Marriege Script </a></li>
+              </ul>
+            </li>
+            <li><a href="../sorryscript" className="hover:text-pink-100">| Sorry Script </a> </li>
+
+            <li><a href="../lovecalculator" className="hover:text-pink-100">| Love Calculator </a></li>
+            <li><a href="../marriagetester" className="hover:text-pink-100">| Marriage Chances Tester </a></li>
+            <li> <a href="#relationship-tips" className="hover:text-pink-100">| Relationship Tips </a></li>
+            <li><a href="#date-ideas" className="hover:text-pink-100">| Date Ideas </a></li>
+          </ul>
+
+        </nav>
+      </div>
+    </div>
+
+    {/* mobile*/}
+    <div className="hidden lg:hidden md:hidden sm:block bg-gradient-to-r from-pink-500 via-red-500 to-purple-500 text-white shadow-lg">
+      <div className="container mx-auto px-4 py-4  items-center justify-between">
+        <nav className="">
+          <ul className=" space-x-6 text-lg font-medium">
+            <li><a href="../wishingscript" className="hover:text-pink-400">| Wishing Script </a> </li>
+            <li><a href="#" className="hover:text-pink-400">| Birthday Script </a></li>
+            <li><a href="#" className="hover:text-pink-400">| Marriege Script </a></li>
+            <li><a href="../sorryscript" className="hover:text-pink-400">| Sorry Script </a> </li>
+            <li><a href="../lovecalculator" className="hover:text-pink-400">| Love Calculator </a></li>
+            <li><a href="../marriagetester" className="hover:text-pink-400">| Marriage Chances Tester </a></li>
+            <li> <a href="#relationship-tips" className="hover:text-pink-400">| Relationship Tips </a></li>
+            <li><a href="#date-ideas" className="hover:text-pink-400">| Date Ideas </a></li>
+          </ul>
+
+        </nav>
+      </div>
+    </div>
+
+  </>)
+}
+export default Scripts;

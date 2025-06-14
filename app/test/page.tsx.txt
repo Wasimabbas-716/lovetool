@@ -1,0 +1,26 @@
+"use client"
+import { useState } from "react"
+function Test(){
+    const [txt,settxt]=useState("Welcome");
+    
+    function A(e:any){
+        console.log(e);
+        settxt(e);
+       
+    }
+    return (<>
+    <h1 className="text-white text-6xl justify-center text-center m-[100px] border w-[fit-content] p-[10px]"
+        onMouseOut={()=>{
+            A("OnClick")
+        }
+    }
+    onMouseOver={()=>{
+        A("Mouse ")
+    }
+}
+    >
+        {txt}
+    </h1>
+    </>)
+}
+export default Test;

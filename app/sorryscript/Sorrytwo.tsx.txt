@@ -1,0 +1,32 @@
+import "../compnents/css/sorrytwo.css"
+function Sorrytwo(){
+    return(<>
+    <div className="page-container bg-pink-700 rounded-[20px]">
+   
+    <div className="background-animation">
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+    </div>
+
+    <div className="content">
+      <h1 className="animated-text">I'M SO SORRY!</h1>
+      <p className="animated-subtext">
+        Please forgive me. I know I made a mistake,<br></br> and it hurts me to see you upset. 💔
+      </p>
+      <button className="forgive-button" id="forgiveBtn">💖 Forgive Me 💖</button>
+    </div>
+
+  
+  
+  </div>
+    </>)
+}
+export default Sorrytwo;

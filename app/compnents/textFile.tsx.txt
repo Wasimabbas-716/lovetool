@@ -1,0 +1,40 @@
+<div className="py-10">
+<div className="container mx-auto px-4"> 
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+   
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg">
+      <h3 className="text-xl font-semibold text-red-500 mb-2">Romantic Ideas</h3>
+      <p className="text-gray-600">Discover unique and creative ways to express your love.</p>
+    </div>
+    
+   
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg">
+      <h3 className="text-xl font-semibold text-purple-500 mb-2">Gift Suggestions</h3>
+      <p className="text-gray-600">Find the perfect gifts to surprise your loved ones.</p>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg">
+      <h3 className="text-xl font-semibold text-pink-500 mb-2">Love Quotes</h3>
+      <p className="text-gray-600">Share beautiful and heartfelt quotes to inspire romance.</p>
+    </div>
+
+  
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg">
+      <h3 className="text-xl font-semibold text-red-500 mb-2">Date Night Plans</h3>
+      <p className="text-gray-600">Plan unforgettable date nights with exciting ideas.</p>
+    </div>
+    
+   
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg">
+      <h3 className="text-xl font-semibold text-purple-500 mb-2">Relationship Tips</h3>
+      <p className="text-gray-600">Learn tips and tricks to strengthen your relationship.</p>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg">
+      <h3 className="text-xl font-semibold text-pink-500 mb-2">Anniversary Ideas</h3>
+      <p className="text-gray-600">Make every anniversary memorable with thoughtful plans.</p>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+"use client"
+import Header from "../compnents/Header"
+import Scripts from "../compnents/Scripts";
+import { useEffect, useState } from "react";
+function Home() {
+  const imgurl="https://wishingyou-three.vercel.app";
+  const [uri, seturi] = useState(imgurl);
+  useEffect(() => {
+    const currentUrl = new URL(window.location.href);
+    const params = currentUrl.searchParams;
+    const name = params.get("name");
+    const frndName = params.get("fr");
+    const rel = params.get("rel");
+    let newurl:any="";
+
+    if(name !==null){
+newurl = `https://wishingyou-three.vercel.app?name=${name}&fr=${frndName}&rel=${rel}`;
+    }
+    else{
+      newurl = "https://wishingyou-three.vercel.app";
+    }
+    seturi(newurl);
+  }, []);
+
+
+
+
+  return (<>
+    <Header />
+    <Scripts />
+
+    <iframe src={uri} className="w-screen h-screen"></iframe>
+  </>)
+}
+export default Home;

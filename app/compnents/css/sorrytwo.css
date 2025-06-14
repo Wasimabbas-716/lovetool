@@ -1,0 +1,124 @@
+/* styles.css */
+
+  
+  .page-container {
+    position: relative;
+    width: clamp(95vw, 90vw, 80vw);
+    height: clamp(95vh, 90vh, 80vh);
+    justify-content: center;
+    margin: 10px auto;
+    
+    overflow: hidden;
+    
+  }
+  
+  /* Background Animation */
+  .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .bubble {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: bubbleMove 10s linear infinite;
+  }
+  
+  .bubble:nth-child(2) { width: 70px; height: 70px; animation-duration: 15s; left: 30%; }
+  .bubble:nth-child(3) { width: 30px; height: 30px; animation-duration: 12s; left: 50%; }
+  .bubble:nth-child(4) { width: 100px; height: 100px; animation-duration: 10s; left: 70%; }
+  .bubble:nth-child(5) { width: 80px; height: 80px; animation-duration: 18s; left: 50%; }
+  .bubble:nth-child(6) { width: 70px; height: 70px; animation-duration: 16s; left: 20%; }
+  .bubble:nth-child(7) { width: 30px; height: 30px; animation-duration: 2s; left: 80%; }
+  .bubble:nth-child(8) { width: 100px; height: 100px; animation-duration: 5s; left: 40%; }
+  .bubble:nth-child(9) { width: 80px; height: 80px; animation-duration: 9s; left: 90%; }
+  
+  @keyframes bubbleMove {
+    0% { transform: translateY(100vh) scale(0.8); }
+    50% { opacity: 1; }
+    100% { transform: translateY(-20%) scale(1.2); opacity: 0; }
+  }
+  
+  /* Content Styling */
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 25px;
+    padding: 8px;
+  }
+  
+  .animated-text {
+    font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive font size */
+    color: #fff;
+    text-shadow: 0 0 20px #ff6b6b;
+    animation: textGlow 2s infinite alternate;
+    animation: buttonPulse 0.3s infinite;
+  }
+  
+  .animated-subtext {
+    font-size: clamp(1rem, 4vw, 2rem); /* Responsive font size */
+    color: #fff;
+    margin: 20px 0;
+    animation: fadeIn 1s infinite alternate;
+  }
+  
+  .forgive-button {
+    background: #ff3d3d;
+    color: #fff;
+    border: none;
+    padding: 15px clamp(20px, 8vw, 40px); /* Responsive padding */
+    font-size: clamp(0.5rem, 4vw, 1.3rem); /* Responsive font size */
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff3d3d;
+    animation: buttonPulse 1.5s infinite;
+  }
+  
+  .forgive-button:hover {
+    background: #ff6b6b;
+    transform: scale(1.2);
+  }
+  
+  @keyframes textGlow {
+    from { text-shadow: 0 0 20px #ff6b6b; }
+    to { text-shadow: 0 0 30px #ff3d3d; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes buttonPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  
+  /* Flying Elements */
+  .flying-elements .heart, 
+  .flying-elements .star, 
+  .flying-elements .flower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    animation: fly 10s linear infinite;
+  }
+  
+  .heart { background: url('https://via.placeholder.com/40/ff6b6b') no-repeat center; background-size: contain; }
+  .star { background: url('https://via.placeholder.com/40/fcd34d') no-repeat center; background-size: contain; }
+  .flower { background: url('https://via.placeholder.com/40/6bcdfc') no-repeat center; background-size: contain; }
+  
+  @keyframes fly {
+    0% { transform: translate(-10%, 100%); }
+    100% { transform: translate(110%, -20%); }
+  }
+  

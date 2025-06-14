@@ -1,0 +1,15 @@
+import LoveArtical from "./Loveartical";
+function Articalscard(){
+    return(<>
+    
+     <div className="flex flex-wrap">
+  <LoveArtical title="Romantic Ideas" desc="Discover unique and creative ways to express your love."/>
+  <LoveArtical title="Gift Suggestions" desc="Find the perfect gifts to surprise your loved ones"/>
+  <LoveArtical title="Love Quotes" desc="Share beautiful and heartfelt quotes to inspire romance."/>
+  <LoveArtical title="Date Night Plans" desc="Plan unforgettable date nights with exciting ideas."/>
+  <LoveArtical title="Relationship Tips" desc="Learn tips and tricks to strengthen your relationship."/>
+  <LoveArtical title="Anniversary Ideas" desc="Make every anniversary memorable with thoughtful plans."/>
+ </div>
+    </>)
+}
+export default Articalscard;

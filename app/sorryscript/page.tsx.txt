@@ -1,0 +1,188 @@
+"use client";
+import Header from "../compnents/Header";
+import Scripts from "../compnents/Scripts";
+import Sorrydropper from "./Sorrydropper";
+import "../compnents/css/sorryscript.css";
+import "../compnents/css/sorrytwo.css"
+
+import { useState, useEffect } from "react";
+import Sorrytwo from "./Sorrytwo";
+
+function SorryScript() {
+
+  const [msglink, setmsglink] = useState("...");
+  const [btn, setbtn] = useState(" Copy Link");
+  const [name, setname] = useState("(Your Name)");
+  const [fname, setfname] = useState("(Your Friend's Name)");
+  const [rel, setrel] = useState("(Your Relation to friend)");
+  const time = new Date().toLocaleTimeString();
+  const date = new Date().toLocaleDateString();
+  function setDisplay() {
+    (document.getElementById("data") as HTMLDivElement).style.display = "none";
+    (document.getElementById("formdiv") as HTMLDivElement).style.display = "flex";
+  }
+  function share(event: React.FormEvent) {
+    event.preventDefault();
+    const formElement = document.getElementById('inpform') as HTMLFormElement;
+    if (!formElement) {
+      console.error('Form element not found');
+      return;
+    }
+    var form = new FormData(formElement);
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwnjZwJ1CL6ihjdJrtqhoJiARv8l2InKL-HzMxyIlKSvcoIthgD6P5jivLoqxwLinvI/exec'; // Replace with your Web App URL
+
+
+    fetch(scriptURL, { method: 'POST', body: form })
+      .then(response => {
+        // setmsglink("Link Copied, Please past it in your Friends Chat");
+        setbtn("Link Ready ✅");
+        clipbord();
+      })
+      .catch(error => setmsglink('Error: ' + error.message));
+
+  }
+
+  function clipbord() {
+
+    var link: any = new URL(window.location.href);
+    var url=link.hostname+link.pathname;
+    var name = (document.getElementById("inpname") as HTMLInputElement).value;
+    var fname = (document.getElementById("inpfname") as HTMLInputElement).value;
+    var rel = (document.getElementById("inprel") as HTMLInputElement).value;
+
+    setmsglink("Link Copied! Share this beautiful apology message with your loved ones and make amends . Paste it in your friends' chat and spread the love!");
+    navigator.clipboard.writeText("Hello " + fname + ", We're deeply sorry for what happened. We want to make things right and show you we care. Please click this special link to see our apology message. Please Open 👇👇👇👇👇👇  " + url + "/?name=" + encodeURIComponent(name) + "&fname=" + encodeURIComponent(fname) + "&rel=" + rel);
+
+  }
+
+  useEffect(() => {
+    var link: any = new URL(window.location.href);
+    var params = link.searchParams;
+    var name = params.get("name");
+    var fname = params.get("fname");
+    var rel = params.get("rel");
+if(name){
+    setname(name);
+    setfname(fname);
+    setrel(rel);
+}
+  
+  }, []);
+
+
+
+  return (
+    <>
+      <Header />
+      <Scripts />
+     
+      <div className="w-screen h-screen flex justify-center items-center ">
+
+{/* Show Script Section */}
+
+<div id="data" className="page-container bg-pink-700 rounded-[20px]">
+   
+   <div className="background-animation">
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+     <div className="bubble"></div>
+   </div>
+
+   <div className="content">
+     <h1 className="animated-text">I'M SO SORRY! <br/>  {fname}</h1>
+   
+     <p className="animated-subtext">
+     
+       Please forgive me {fname}. I know I made a mistake,<br></br> and it hurts me to see you upset my {rel}. 💔
+    <br /> your {name}
+     </p>
+     <button className="forgive-button" id="" onClick={setDisplay}>💖 Share with Friend 💖</button>
+   </div>
+
+ 
+ 
+ </div>
+
+
+
+
+
+{/* Form Section */}
+
+        <div id="formdiv"
+          className="hidden z-10 w-[90%] h-[90%] md:w-[60%] md:h-[80%] lg:w-[70%] lg:h-[90%]  flex-col justify-between p-6 text-center bg-pink-800 text-white shadow-lg rounded-3xl">
+
+          <form onSubmit={share} id="inpform" className="space-y-6">
+
+            <div className="flex flex-col">
+              <label htmlFor="your-name" className="text-left font-medium">Your Name</label>
+              <input
+                id="inpname"
+                name="name"
+                type="text"
+                placeholder="Enter Your Name"
+                className="text-pink-800 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+              />
+            </div>
+
+
+            <div className="flex flex-col">
+              <label htmlFor="friends-name" className="text-left  font-medium">Friend's Name</label>
+              <input
+                id="inpfname"
+                name="fname"
+                type="text"
+                placeholder="Enter Friend's Name"
+                className="text-pink-800 w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <label htmlFor="relation" className="text-left  font-medium">Select Relation</label>
+              <select
+                id="inprel"
+                name="relation"
+                className="w-full p-3 border border-gray-300 rounded-md text-pink-800 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+              >
+                <option value="dear">Dear</option>
+                <option value="Love">Love</option>
+                <option value="life">Life</option>
+                <option value="sister">Sister</option>
+                <option value="bro">Brother</option>
+                <option value="father">Father</option>
+                <option value="mother">Mother</option>
+                <option value="uncle">Uncle</option>
+              </select>
+            </div>
+
+            <input type="hidden" name="date" value={date} />
+            <input type="hidden" name="time" value={time} />
+            <input type="hidden" name="func" value="sorry" />
+
+            <div>
+              <button
+                type="submit"
+                className="w-full p-3 bg-fuchsia-600 text-white rounded-md hover:bg-fuchsia-500 transition-all" onClick={() => { setbtn("Please wait...") }}>
+                {btn}
+              </button>
+              <h3 className="m-[30px] text-gray">{msglink}</h3>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+       
+    </>
+  );
+}
+
+export default SorryScript;
